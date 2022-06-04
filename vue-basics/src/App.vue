@@ -8,7 +8,6 @@
 <div v-else-if="isVisible2" class="box two"></div>
 <div v-else class="box three"></div>
 
-
 </template>
 
 <script>
@@ -42,5 +41,8 @@ body {
 }
 .three {
   background: darkgreen;
+}
+[v-cloak] {
+  display: none;
 }
 </style>
