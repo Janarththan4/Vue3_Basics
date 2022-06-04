@@ -5,7 +5,9 @@
 <hr />
 
 <div v-if="isVisible" class="box"></div>
-<div v-show="isVisible" class="box"></div>
+<div v-else-if="isVisible2" class="box two"></div>
+<div v-else class="box three"></div>
+
 
 </template>
 
@@ -15,6 +17,7 @@ export default {
     return {
       greeting: "Hello Vue 3!",
       isVisible: false,
+      isVisible2: true, 
     }
   }
 }
@@ -33,5 +36,11 @@ body {
   background: indigo;
   height: 200px;
   width: 200px;
+}
+.two {
+  background: crimson;
+}
+.three {
+  background: darkgreen;
 }
 </style>
