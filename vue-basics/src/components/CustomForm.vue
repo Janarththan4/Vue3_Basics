@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h1>{{ title }}</h1>
-    <custom-input type="text" v-model="email" />
-    <custom-input type="password" v-model="password" />
+    <custom-input type="text" v-bind:label="emailLabel"/>
+    <custom-input type="password" v-bind:label="passwordLabel"/>
     <button>Log in</button>
   </form>
 </template>
@@ -22,7 +22,7 @@ export default {
             email: '',
             password: '',
             emailLabel: 'Email',
-            passwordLabe: 'Password',
+            passwordLabel: 'Password',
         }
     },
     methods: {

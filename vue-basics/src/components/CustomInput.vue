@@ -13,7 +13,9 @@ export default {
         return {
             
         }
-    }
+    },
+
+    props: ['label']
 }
 </script>
 
