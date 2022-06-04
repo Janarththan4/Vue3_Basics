@@ -1,6 +1,8 @@
 <template>
 
 <h1>{{ greeting }}</h1>
+<input v-model="greeting" />
+
 
 </template>
 
