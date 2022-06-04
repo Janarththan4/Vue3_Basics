@@ -5,7 +5,7 @@
 
 <hr />
 
-<button v-on:click="isVisible = !isVisible">Toggle Box</button>
+<button @click="toggleBox">Toggle Box</button>
 <div v-if="isVisible" class="box"></div>
 <!-- <div v-else-if="isVisible2" class="box two"></div>
 <div v-else class="box three"></div> -->
@@ -18,7 +18,12 @@ export default {
     return {
       greeting: "Hello Vue 3!",
       isVisible: false,
-      isVisible2: false,
+      // isVisible2: false,
+    }
+  },
+  methods: {
+    toggleBox() {
+      this.isVisible = !this.isVisible;
     }
   }
 }
