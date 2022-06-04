@@ -1,19 +1,16 @@
 <template>
 
-<h1>{{ greeting }}</h1>
-<input @keyup.enter="greet(greeting + ' !!!')" v-model="greeting" />
-
-<hr />
-
-<button @click="toggleBox">Toggle Box</button>
-<div v-if="isVisible" class="box"></div>
-<!-- <div v-else-if="isVisible2" class="box two"></div>
-<div v-else class="box three"></div> -->
+<custom-form />
 
 </template>
 
 <script>
+import CustomForm from './components/CustomForm.vue'
+
 export default {
+  components: {
+    CustomForm,
+  },
   data() {
     return {
       greeting: "Hello Vue 3!",
@@ -29,13 +26,15 @@ export default {
       console.log(greeting)
     }
   }
-}
+};
 
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
+  margin: 0; padding: 0;
   font-family: 'Poppins', sans-serif;
   background: rgba(0,0,0,.75);
   color: white;
