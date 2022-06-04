@@ -1,6 +1,6 @@
 <template>
 
-
+<h1>{{ greeting }}</h1>
 
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      
+      greeting: "Hello Vue 3!"
     }
   }
 }
