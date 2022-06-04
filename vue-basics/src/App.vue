@@ -2,11 +2,13 @@
 
 <h1>{{ greeting }}</h1>
 <input v-model="greeting" />
+
 <hr />
 
+<button v-on:click="isVisible = !isVisible">Toggle Box</button>
 <div v-if="isVisible" class="box"></div>
-<div v-else-if="isVisible2" class="box two"></div>
-<div v-else class="box three"></div>
+<!-- <div v-else-if="isVisible2" class="box two"></div>
+<div v-else class="box three"></div> -->
 
 </template>
 
@@ -16,7 +18,7 @@ export default {
     return {
       greeting: "Hello Vue 3!",
       isVisible: false,
-      isVisible2: true, 
+      isVisible2: false,
     }
   }
 }
@@ -28,19 +30,21 @@ export default {
 body {
   font-family: 'Poppins', sans-serif;
   background: rgba(0,0,0,.75);
-  text-align: center;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .box {
-  background: indigo;
+  background: crimson;
   height: 200px;
   width: 200px;
 }
 .two {
-  background: crimson;
+  background: goldenrod;
 }
 .three {
-  background: darkgreen;
+  background: aqua;
 }
 [v-cloak] {
   display: none;
