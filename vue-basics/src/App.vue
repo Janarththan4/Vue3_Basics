@@ -2,7 +2,10 @@
 
 <h1>{{ greeting }}</h1>
 <input v-model="greeting" />
+<hr />
 
+<div v-if="isVisible" class="box"></div>
+<div v-show="isVisible" class="box"></div>
 
 </template>
 
@@ -10,7 +13,8 @@
 export default {
   data() {
     return {
-      greeting: "Hello Vue 3!"
+      greeting: "Hello Vue 3!",
+      isVisible: false,
     }
   }
 }
@@ -24,5 +28,10 @@ body {
   background: rgba(0,0,0,.75);
   text-align: center;
   color: white;
+}
+.box {
+  background: indigo;
+  height: 200px;
+  width: 200px;
 }
 </style>
