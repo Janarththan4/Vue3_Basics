@@ -1,7 +1,7 @@
 <template>
 
 <h1>{{ greeting }}</h1>
-<input v-model="greeting" />
+<input @keyup.enter="greet(greeting + ' !!!')" v-model="greeting" />
 
 <hr />
 
@@ -24,6 +24,9 @@ export default {
   methods: {
     toggleBox() {
       this.isVisible = !this.isVisible;
+    },
+    greet(greeting) {
+      console.log(greeting)
     }
   }
 }
