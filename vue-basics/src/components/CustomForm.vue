@@ -1,8 +1,8 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h1>{{ title }}</h1>
-    <custom-input type="text" v-bind:label="emailLabel"/>
-    <custom-input type="password" v-bind:label="passwordLabel"/>
+    <custom-input v-model="email" :label="emailLabel"/>
+    <custom-input v-model="password" :label="passwordLabel"/>
     <button>Log in</button>
   </form>
 </template>
@@ -27,7 +27,6 @@ export default {
     },
     methods: {
         handleSubmit() {
-            // e.preventDefault()
             console.log(this.email, this.password)
         }
     }
@@ -36,7 +35,7 @@ export default {
 
 <style>
 input, button {
-  margin: 10px;
+  margin: 10px 0;
   display: block;
 }
 </style>
