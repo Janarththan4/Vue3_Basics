@@ -1,6 +1,7 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h1>{{ title }}</h1>
+    <p v-for="(str, idx) in inputs" :key="str">{{ str }} {{ idx }}</p>
     <custom-input v-model="email" :label="emailLabel"/>
     <custom-input v-model="password" :label="passwordLabel"/>
     <button>Log in</button>
@@ -19,6 +20,11 @@ export default {
     data() {
         return {
             title: 'Login Form',
+            inputs: [
+                'email',
+                'passwords',
+                'name'
+            ],
             email: '',
             password: '',
             emailLabel: 'Email',
