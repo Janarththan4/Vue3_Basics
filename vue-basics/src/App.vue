@@ -1,30 +1,30 @@
 <template>
 
-<custom-form />
+<button @click="toggleBox">Toggle Box</button>
+<test-box v-if="isVisible" />
 
 </template>
 
 <script>
 import CustomForm from './components/CustomForm.vue'
+import TestBox from './components/TestBox.vue'
 
 export default {
   components: {
-    CustomForm,
+    CustomForm,TestBox
   },
   data() {
     return {
-      greeting: "Hello Vue 3!",
       isVisible: false,
-      // isVisible2: false,
     }
   },
   methods: {
-    toggleBox() {
+    toggleBox: function() {
       this.isVisible = !this.isVisible;
-    },
-    greet(greeting) {
-      console.log(greeting)
     }
+  },
+  updated() {
+    console.log('updated');
   }
 };
 
