@@ -1,7 +1,7 @@
 <template>
     <label>
         {{ label }}
-        <input type="text" v-model="inputValue"/>
+        <input :type="type" v-model="inputValue"/>
     </label>
 </template>
 
@@ -15,7 +15,7 @@ export default {
     //     }
     // },
 
-    props: ['label', 'modelValue'],
+    props: ['label', 'type', 'modelValue'],
 
     computed: {
         inputValue: {

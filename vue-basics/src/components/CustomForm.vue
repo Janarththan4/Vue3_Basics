@@ -1,9 +1,13 @@
 <template>
   <form @submit.prevent="handleSubmit">
     <h1>{{ title }}</h1>
-    <p v-for="(str, idx) in inputs" :key="str">{{ str }} {{ idx }}</p>
-    <custom-input v-model="email" :label="emailLabel"/>
-    <custom-input v-model="password" :label="passwordLabel"/>
+    <custom-input
+        v-for="(input,i) in inputs"
+        :key="i"
+        v-model="input.value" 
+        :label="input.label"
+        :type="input.type"
+    />
     <button>Log in</button>
   </form>
 </template>
@@ -21,19 +25,22 @@ export default {
         return {
             title: 'Login Form',
             inputs: [
-                'email',
-                'passwords',
-                'name'
-            ],
-            email: '',
-            password: '',
-            emailLabel: 'Email',
-            passwordLabel: 'Password',
+                {
+                label: 'Email',
+                value: '',
+                type: 'email'
+                },
+                {
+                label: 'Password',
+                value: '',
+                type: 'password'
+                }
+            ]
         }
     },
     methods: {
         handleSubmit() {
-            console.log(this.email, this.password)
+            console.log(this.inputs[0].value, this.inputs[1].value)
         }
     }
 };
